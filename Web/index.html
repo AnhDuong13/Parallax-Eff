@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">TheLogo</a>
+        <ul>
+            <li><a href="#" class="active" >Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" id="stars">
+        <img src="./img/moon.png" id="moon">
+        <h2 id="text">Moon Light</h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="./img/mountains_behind.png" id="mou-behind">
+        <img src="./img/mountains_front.png" id="mou-front">
+    </section>
+    <div class="per">
+        <h2>This is a project where i use to learn about the parallax scrolling effects</h2>
+        <p>Parallax scrolling effect is a technique where the background of a website scrolls at a slower pace than the foreground. The purpose is to achieve an illusion of depth within the 2d scene of a website</p>
+        <p>Parallax is based on optical illusion. Since the human eye perceives objects that are close to us as larger than things farther away, we perceive distant objects as if they were moving more slowly</p>
+        <p>The source code is base on : <a style="color: azure;" href="https://www.youtube.com/watch?v=1wfeqDyMUx4&t=735s">THIS</a></p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let moub = document.getElementById('mou-behind');
+        let mouf = document.getElementById('mou-front');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn')
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY
+            stars.style.left = value * 0.25+ 'px';
+            moon.style.top = value * 1.05+ 'px';
+            moub.style.top = value * 0.05+ 'px';
+            mouf.style.top = value * 0+ 'px';
+            text.style.marginRight = value *4 +'px';
+            text.style.marginTop = value *1.5 +'px';
+        })
+    </script>
+</body>
+</html>
